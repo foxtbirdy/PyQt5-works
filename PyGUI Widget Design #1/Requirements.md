@@ -4,7 +4,7 @@
 
 ## Guide to run program
 1. Download these two files 🔽 </br>
-
+![Image for Assist](https://github.com/Code-Blender-7/Designing_Mayhems/blob/main/PyGUI%20Widget%20Design%20%231/Images/screenshot_1.png)
 
 2. Run your Editor 🔽 </br>
 After you downloaded the files, Be sure to keep them in the same directory.
