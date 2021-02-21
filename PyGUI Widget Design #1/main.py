@@ -78,7 +78,7 @@ QToolBar {
 		self._createToolBars_()
 		self._ContextMenu_()
 		self._connectActions()
-
+		self.createStatusBar()
 
 ################# FEATURE ADDING BELOW ##################
 
@@ -102,7 +102,7 @@ QToolBar {
 		editMenu.addSeparator()
 		fileMenu2 = editMenu.addMenu("Find and Replace")
 		fileMenu2.addAction("Find ? ")
-		fileMenu2.addAction("Replace ? ")
+		fileMenu2.addAction("Replace ? ") 
         # Help menu
 		helpMenu = menuBar.addMenu(QIcon(":help-content.svg"), "&Help")
 		helpMenu.addAction(self.helpContentAction)
@@ -150,6 +150,40 @@ QToolBar {
 		self.copyAction = QAction(QIcon(":edit-copy.svg"), "&Copy", self)
 		self.pasteAction = QAction(QIcon(":edit-paste.svg"), "Paste", self)
 		self.cutAction = QAction(QIcon(":edit-cut.svg"), "Cut", self)
+		# Shortcuts?
+		self.newAction.setShortcut("Ctrl+N")
+		self.openAction.setShortcut("Ctrl+O")
+		self.saveAction.setShortcut("Ctrl+S")
+		self.copyAction.setShortcut(QKeySequence.Copy)
+		self.pasteAction.setShortcut(QKeySequence.Paste)
+		self.cutAction.setShortcut(QKeySequence.Cut)
+
+		# Adding status.....
+
+		self.newAction.setStatusTip("Create a new file?")
+		self.newAction.setToolTip("Create?")
+
+		self.openAction.setStatusTip("Open a new file?")
+		self.openAction.setToolTip("Open?")
+
+		self.saveAction.setStatusTip("Save the file?")
+		self.saveAction.setToolTip("Save?")
+
+		self.copyAction.setStatusTip("Copy something?")
+		self.copyAction.setToolTip("Copy?")
+
+		self.pasteAction.setStatusTip("Paste something?")
+		self.pasteAction.setToolTip("Paste?")
+
+		self.cutAction.setStatusTip("Move something?")
+		self.cutAction.setToolTip("Move?")
+
+		self.helpContentAction.setStatusTip("Help Content....")
+		self.aboutAction.setStatusTip("About File....")
+
+
+
+
 
 	def _ContextMenu_(self):
 		self.centralWidget.setContextMenuPolicy(Qt.ActionsContextMenu)
@@ -176,19 +210,19 @@ QToolBar {
 		self.centralWidget.setText("How can you save when you didn't even write anything?")
 
 	def copyContent(self):
-		self.centralWidget.setText("<b>Copy chan</b> got clicked!")
+		self.centralWidget.setText("<b>Copy chan</b> got GOT TRIGGERED?!")
 
 	def pasteContent(self):
-		self.centralWidget.setText("<b>Edit > Paste chan</b> clicked!")
+		self.centralWidget.setText("<b>Paste chan</b> got a Jackpot!!")
 
 	def cutContent(self):
-		self.centralWidget.setText("<b>Edit > Cut</b> clicked")
+		self.centralWidget.setText("I'm sorry but we are not doing art here..")
 
 	def helpContent(self):
-		self.centralWidget.setText("<b>Help > Help Content...</b> clicked")
+		self.centralWidget.setText("<b>HELP chan</b> is out of Context?")
 
 	def about(self):
-		self.centralWidget.setText("<b>Help > About...</b> clicked")
+		self.centralWidget.setText("READ THE <b>GITHUB</b>, LOL")
 
 
 	def _connectActions(self):
@@ -202,12 +236,32 @@ QToolBar {
 		self.cutAction.triggered.connect(self.cutContent)	
 		# Connect Help actions	
 		self.helpContentAction.triggered.connect(self.helpContent)
-		self.aboutAction.triggered.connect(self.about)		
+		self.aboutAction.triggered.connect(self.about)
+		# Connect Recent Open Files
+		self.openRecentMenu.aboutToShow.connect(self.populate_the_recents)		
 
 ################################################################
 ################### SLOT CONNECTIONS ABOVE #####################
 ################################################################
-	
+	def populate_the_recents(self):
+		self.openRecentMenu.clear()
+		actions = []
+		fileName = [f"File-{n}" for n in range(5)]
+		for fileNames in fileName:
+			action = QAction(fileNames, self)
+			action.triggered.connect(partial(self.openRecentFile, fileNames))
+			actions.append(action)
+		self.openRecentMenu.addActions(actions)
+
+
+	def openRecentFile(self, filename):
+		self.centralWidget.setText(f"<b>{filename}</b> got opened?")
+
+	def createStatusBar(self):
+		self.statusBar = self.statusBar()
+		self.setStatusBar(self.statusBar)
+		Qlabel_text = QLabel("Open Sourced Project", self)
+		self.statusBar.addPermanentWidget(Qlabel_text)
 
 
 
