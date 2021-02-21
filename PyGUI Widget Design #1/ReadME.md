@@ -1,7 +1,7 @@
 ## About File
 Hi Hi there,
 Hope you guys are fine and good.
-The PyQt5 Widget Design #1 only houses a setStyleSheet that makes most of the design of the program. Really excited to see your remake of this program. 
+The PyGUI Widget Design #1 only houses a setStyleSheet that makes most of the design of the program. Really excited to see your remake of this program. 
 
 
 Tutorial from Real Python,
