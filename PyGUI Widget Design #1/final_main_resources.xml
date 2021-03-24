@@ -1,0 +1,12 @@
+<!DOCTYPE RCC><RCC version="1.0">
+<qresource>
+    <file alias="file-new.svg">resources/file-new</file>
+    <file alias="file-open.svg">resources/file-open</file>
+    <file alias="file-save.svg">resources/file-save</file>
+    <file alias="file-exit.svg">resources/file-exit.</file>
+    <file alias="edit-copy.svg">resources/edit-copy</file>
+    <file alias="edit-cut.svg">resources/edit-cut</file>
+    <file alias="edit-paste.svg">resources/edit-paste</file>
+    <file alias="help-content.svg">resources/help-content</file>
+</qresource>
+</RCC>
