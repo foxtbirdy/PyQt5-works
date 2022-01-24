@@ -1,0 +1,29 @@
+This is it.
+
+The holy grail is here.
+
+in the section of the book was described about the Signals and the slots of the pyqt5
+
+the setCheckable is a feature that enables the button to be checkable like a box or not. 
+
+the setCheckable is also highlighted
+
+
+Remember that you can connect the element to multiple slots but the QPushButton is only bound to a single element.
+
+and the project works like magic. 
+Though, not many would understand and be able to see when the highlighter is on or off. 
+
+add a checked instance on the slot functions to trigger the boolean of wheither it is triggered or not. 
+
+=============================================================
+use the isChecked() function to find out if a button is highlighted or not. 
+Remember that to use the isChecked to find out some interesting new behavior in the application.
+=============================================================
+
+
+use setText on any widget to add a new text on them.
+use setEnabled(bool) to make them be accessble or not.
+
+
+

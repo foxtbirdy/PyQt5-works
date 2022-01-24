@@ -1,0 +1,25 @@
+This is termed as a important and rare ability of the PyQt5 and not many of the modern or old GUI apps often use this type of technology. 
+
+
+The PyQt5's checkbox is the topic. 
+
+It cannot be aligned. Which means that the setAlignment sucks. 
+
+
+The PyQt5's checkbox comes up with the ability of printing out the nature of the checkbox activity with numbers. 
+
+Syntax as follows - 
+
+    def show_state(self, s):
+        print(s)
+        if s == 1:
+            print("What are you doing??")
+
+
+using the following syntax, we can create some interesting features with the GUI that is completely unexpected. 
+
+I did not checked if we could change the text and the name of the checkbox of the GUI yet.
+
+
+The behavior of the checkbox can be found at the page 45-46 of the GUI tutorial. 
+

@@ -1,0 +1,10 @@
+From the following code, the same trick but with new syntax are found here.
+
+
+the windowTitleChanged.connect(self.function) is a new feature that I have'nt seen it before. 
+this syntax shows what should happen in case the window's title name got changed. It's pretty rare syntax to be used in the PyQt5. 
+
+This is written in the doc,
+-  Firstly, the windowTitleChanged signal is not always emitted when setting the window title. The signal only fires if they new title is a change from the previous one. It’s important to know exactly what conditions signals fire under, to avoid being surprised!
+
+

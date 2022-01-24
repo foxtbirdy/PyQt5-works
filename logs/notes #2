@@ -1,0 +1,17 @@
+Use QMainWindow of the QtWidgets to create a main application window.
+
+You can use the QMainWindow to add some new content on it.
+
+You can use the QMainWindow as a subclass to add new content on it.
+
+When you subclass a Qt class you must always call the super
+__init__ function to allow Qt to set up the object.
+
+You can go to http://doc.qt.io/qt-5/widget-classes.html#basic-widget-classes to find out some new widget ideas and how to implement them.
+
+
+
+Use the QSize to handle the size of the application.
+Use the setFixedSize() to set the fixed size.
+Use the setMinimumSize() to set the minimum size
+Use the setMaximumSize() to set the maximum size

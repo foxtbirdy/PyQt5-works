@@ -1,0 +1,39 @@
+This is the first log of the widget tutorial.
+
+widget can be anything. 
+QLabel is basically a label that has text inside of it. 
+
+use this syntax -
+
+font = widget.font()
+font.setPointSize(30)
+
+widget.setFont(font)
+
+
+to appoint and change the font size of the following label.
+
+well, it's a gold mine to me. 
+
+use the widget.setAlignment(Qt.AlignHCenter | Qt.AlignVCenter
+) to set the following widget on the center.
+
+
+URGENT - 
+Go to the Page 41 of the pdf course and you will see the details of the widget positioning. 
+
+Similarly, a widget is not always a label. Add a pic by using setPixmap(QPixmap("pic name"))
+
+be sure to import QPixmap from PyQt5.QtGui
+
+setScaledContents are a new method used in the program.
+
+if bool==true then the entire imagine will change size with the widget.
+otherwise, the image would just be original from the beginning. 
+
+This note was taken from the doc 
+- Weirdly, you can also use QLabel to display an image using the .setPixmap()
+method. This accepts an pixmap (a pixel array), which you can create by
+passing an image filename to QPixmap. In the example files provided with this
+book you can find a file otje.jpg which you can display in your window as
+follows:

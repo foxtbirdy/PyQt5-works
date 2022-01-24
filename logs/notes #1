@@ -1,0 +1,20 @@
+Every pyqt5 program requires at first 1 instance of the QApplication.
+
+Create a instance of the QApplication by using 
+-
+app = QApplication(sys.argv)
+
+
+creating an instance of QWidget using window = QWidget()
+remember that all the windows are hidden by default.
+
+wait, all the windows without a parent are hidden.
+
+call app.exec_() to start up the event loop
+
+there is only 1 event loop at any time.
+
+
+
+QWidget button is just a blank screen.
+USe QPushButton to spawm a button on the screen instead of QWidget

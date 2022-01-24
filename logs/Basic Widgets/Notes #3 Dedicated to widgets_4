@@ -1,0 +1,10 @@
+It is known that the list like structure of the whole GUI is very old. Capable to handle all kinds of syntax. But the List is actually called a QCheckBox. 
+
+
+A QCombokBox is created as a widget that can support font changes as well.
+The QComboBox is created and it can have a fixed list, a customization list with add or limit of adding. 
+
+The QComboBox is capable to change it's text as well. That is quite good too. 
+
+Head over to the PDF to learn more. 
+
