@@ -10,3 +10,8 @@ However the dial is better used of the purpose of measuring the volume by the he
 I learned the trick that not using the setCentralWidget is a good idea to include more widgets.... Thanks to the GeeksforGeeks for the sample.
 
 The first thing that i did was to jog up my memory. I had to find the code ROT13 code that I did maybe 4-6 months ago..
+
+the code included the structure that was used to handle multiple widgets without using the setCentralWidget. I immediately began working on the class and the functions to create the demo.
+
+the whole research and timing took like a hour but the truth is that I am feeling quite numb so yeah... it took a while.
+
