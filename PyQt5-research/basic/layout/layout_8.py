@@ -2,7 +2,7 @@
 # @Author: Climax
 # @Date:   2022-04-27 23:02:15
 # @Last Modified by:   Climax
-# @Last Modified time: 2022-04-28 00:20:01
+# @Last Modified time: 2022-04-30 00:51:32
 import sys
 
 from PyQt5.QtCore import Qt
@@ -16,8 +16,8 @@ class MainWindow(QMainWindow):
 
 		self.setWindowTitle("QStackedLayout + Box DEMO")
 
-		page_layout = QVBoxLayout()
-		button_layout = QHBoxLayout()
+		page_layout = QHBoxLayout()
+		button_layout = QVBoxLayout()
 		self.stackLayout = QStackedLayout()
 
 		page_layout.addLayout(button_layout) # The page's button would be a vertical layout
@@ -43,6 +43,7 @@ class MainWindow(QMainWindow):
 
 		
 		widget = QWidget()
+		
 		widget.setLayout(page_layout)
 		self.setCentralWidget(widget)
 
