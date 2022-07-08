@@ -2,13 +2,13 @@
 # @Author: Climax
 # @Date:   2022-07-06 16:25:20
 # @Last Modified by:   Climax
-# @Last Modified time: 2022-07-06 22:04:58
+# @Last Modified time: 2022-07-08 18:38:49
 
 
 
 import sys
 
-from PyQt5.QtWidgets import QApplication, QMainWindow, QVBoxLayout, QPushButton, QDialog, QDialogButtonBox, QLabel, QMessageBox
+from PyQt5.QtWidgets import QApplication, QMainWindow, QVBoxLayout, QPushButton, QLabel, QMessageBox
 
 class MainWindow(QMainWindow):
 
@@ -40,10 +40,6 @@ class MainWindow(QMainWindow):
 		elif button == QMessageBox.Ignore:
 			print("He actually ignored me")
 
-
-class CustomDialog(QDialog):
-	def __init__(self):
-		super().__init__()
 
 
 

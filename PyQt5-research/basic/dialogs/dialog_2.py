@@ -2,7 +2,7 @@
 # @Author: Climax
 # @Date:   2022-07-06 22:02:52
 # @Last Modified by:   Climax
-# @Last Modified time: 2022-07-06 22:26:55
+# @Last Modified time: 2022-07-08 18:38:28
 
 
 
@@ -15,6 +15,7 @@ import webbrowser
 from PyQt5.QtWidgets import QApplication,QMainWindow, QVBoxLayout, QPushButton, QDialog, QDialogButtonBox, QLabel 
 
 url = "https://github.com/Code-Blender-7"
+app = QApplication(sys.argv)
 
 class MainWindow(QMainWindow):
 
@@ -39,7 +40,7 @@ class MainWindow(QMainWindow):
 			webbrowser.open(url)
 		else:
 			print("Redirection Cancelled.")
-			app.quit() # app = QApplication(sys.argv)
+			app.quit() # exit the program
 
 
 class CustomDialog(QDialog):
@@ -63,7 +64,6 @@ class CustomDialog(QDialog):
 		self.setLayout(self.layout)
 
 
-app = QApplication(sys.argv)
 window = MainWindow()
 window.show()
 app.exec_()
