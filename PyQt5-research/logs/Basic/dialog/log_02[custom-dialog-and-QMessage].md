@@ -44,3 +44,6 @@ this is where the ```dlg = CustomDialog()``` was supposed to be ```dlg = CustomD
 # QMessageBox
 
 the message dialogs with QmessageBox is the basics of every applications notification when they pop up. this is used for the purpose of notifying users with a slight notifications related to something.
+
+
+I am too lazy to write more about it but you'll find it's code on the Basics/dialogs_4.py in this repository over the project-research files from the log folder.
