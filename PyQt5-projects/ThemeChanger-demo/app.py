@@ -2,7 +2,7 @@
 # @Author: Climax
 # @Date:   2022-08-08 10:30:23
 # @Last Modified by:   Climax
-# @Last Modified time: 2022-08-08 11:20:44
+# @Last Modified time: 2022-08-08 14:20:54
 
 import sys
 
@@ -39,16 +39,16 @@ class MainWindow(QMainWindow):
 
 
 	def change_theme_red(self):
-		self.setStyleSheet("background-color: red")
+		self.setStyleSheet("QMainWindow {background-color: red}")
 
 	def change_theme_blue(self):
-		self.setStyleSheet("background-color: blue")
+		self.setStyleSheet("QMainWindow {background-color: blue}")
 
 	def change_theme_green(self):
-		self.setStyleSheet("background-color: green")
+		self.setStyleSheet("QMainWindow {background-color: green}")
 
 	def change_theme_yellow(self):
-		self.setStyleSheet("background-color: yellow")
+		self.setStyleSheet("QMainWindow {background-color: yellow}")
 
 app = QApplication(sys.argv)
 
