@@ -25,7 +25,7 @@ class MainWindow(QMainWindow):
 		toolBar.setIconSize(QSize(16,16)) # set size
 		self.addToolBar(toolBar)
 
-		button_action = QAction(QIcon("extra/bug.png"),"Your button", self)
+		button_action = QAction(QIcon("bug.png"),"Your button", self)
 		button_action.setStatusTip("Hello there")
 
 
