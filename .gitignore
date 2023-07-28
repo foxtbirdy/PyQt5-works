@@ -1,3 +1,8 @@
 .vscode
 pyqt5-source
 Qt-Practice
+Scripts
+pyvenv.cfg
+Lib
+Include
+**/__pycache__/

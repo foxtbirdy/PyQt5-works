@@ -1,9 +1,5 @@
- # -*- coding: utf-8 -*-
-# @Author: Climax
-# @Date:   2022-04-26 19:43:45
-# @Last Modified by:   Climax
-# @Last Modified time: 2022-04-26 23:44:37
-
+# Gridlayout based widget
+# Range is determined by the highest row number or column number
 
 import sys
 
@@ -32,8 +28,7 @@ class MainWindow(QMainWindow):
 
 		layout = QGridLayout()
 
-		layout.addWidget(Color("red"),1,0)
-		layout.addWidget(Color("purple"),0,1)
+		layout.addWidget(Color("red"),1,0) # 1 = row , 0 = column		layout.addWidget(Color("purple"),0,1)
 		layout.addWidget(Color("green"),1,2)
 		layout.addWidget(Color("blue"),2,1)
 		layout.addWidget(Color("pink"),1,3)

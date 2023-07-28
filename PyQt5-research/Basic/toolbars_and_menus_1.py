@@ -1,8 +1,5 @@
-# -*- coding: utf-8 -*-
-# @Author: Climax
-# @Date:   2022-04-30 01:51:14
-# @Last Modified by:   Climax
-# @Last Modified time: 2022-04-30 02:04:09
+# QToolBar: Creating a table that can be used to add more functionality
+# Set QToolBar to Active window
 
 import sys
 from PyQt5.QtCore import Qt
@@ -22,6 +19,8 @@ class MainWindow(QMainWindow):
 		self.setCentralWidget(label)
 
 		toolBar = QToolBar("ToolBar")
+  
+		# adding toolBar to app
 		self.addToolBar(toolBar)
 
 

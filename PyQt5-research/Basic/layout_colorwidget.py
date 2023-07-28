@@ -1,14 +1,9 @@
-# -*- coding: utf-8 -*-
-# @Author: Climax
-# @Date:   2022-04-14 21:18:53
-# @Last Modified by:   Climax
-# @Last Modified time: 2022-04-26 19:46:27
+# Creating a Widget shortcut
+# import and use as function to set color
 
 
 from PyQt5.QtGui import QColor, QPalette
 from PyQt5.QtWidgets import QWidget
-
-
 
 class Color(QWidget):
 	def __init__(self, color):

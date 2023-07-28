@@ -1,9 +1,4 @@
-# -*- coding: utf-8 -*-
-# @Author: Climax
-# @Date:   2022-04-26 19:43:45
-# @Last Modified by:   Climax
-# @Last Modified time: 2022-04-26 21:22:10
-
+# Nested Layout Design
 
 import sys
 
@@ -11,7 +6,6 @@ from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import (
 	QApplication,
 	QHBoxLayout,
-	QLabel,
 	QMainWindow,
 	QVBoxLayout,
 	QWidget
@@ -30,6 +24,8 @@ class MainWindow(QMainWindow):
 		self.setFixedSize(500,300)
 		
 
+		# QHBoxLayout = Horizontal Laying
+		# QVBoxLayout = Vertical laying
 
 		layout1 = QHBoxLayout()
 		layout2 = QVBoxLayout()
@@ -43,11 +39,11 @@ class MainWindow(QMainWindow):
 		layout3.addWidget(Color("black"))
 		layout3.addWidget(Color("green"))
 
-		layout1.addLayout(layout2)
 		layout1.addLayout(layout3)
+		layout1.addLayout(layout2)
 		layout1.addWidget(Color("green"))
-		layout1.setContentsMargins(0,0,0,0)
-		layout1.setSpacing(20)
+		layout1.setContentsMargins(10,10,5,5)
+		layout1.setSpacing(1)
 
 		widget = QWidget()
 		widget.setLayout(layout1)

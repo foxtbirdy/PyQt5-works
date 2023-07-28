@@ -1,12 +1,10 @@
-# -*- coding: utf-8 -*-
-# @Author: Climax
-# @Date:   2022-04-27 23:02:15
-# @Last Modified by:   Climax
-# @Last Modified time: 2022-04-30 01:28:54
+# QTabWidget: The other option of creating Tabbed Widgets without QSstackedWidget
+# Only exception found yet is that QTabWidget is vertical. Why is that?
+
 import sys
 
 from PyQt5.QtCore import Qt
-from PyQt5.QtWidgets import (QApplication, QMainWindow, QWidget, QLabel, QPushButton, QTabWidget,)
+from PyQt5.QtWidgets import (QApplication, QMainWindow, QTabWidget)
 
 from layout_colorwidget import Color
 
@@ -17,6 +15,7 @@ class MainWindow(QMainWindow):
 		self.setWindowTitle("Tabbed Edit + Box DEMO")
 
 		tabs = QTabWidget()
+		tabs.setDocumentMode(True) # for universal behavior
 		tabs.setTabPosition(QTabWidget.West)
 		tabs.setMovable(True)
 

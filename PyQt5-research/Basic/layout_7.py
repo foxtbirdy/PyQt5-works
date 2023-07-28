@@ -1,8 +1,5 @@
-# -*- coding: utf-8 -*-
-# @Author: Climax
-# @Date:   2022-04-27 23:02:15
-# @Last Modified by:   Climax
-# @Last Modified time: 2022-04-28 00:52:44
+# QStackedLayout: Literally stacking multiple widgets in a single window.
+# In this demo, the widgets are stacked but no way to prove it as no functionality is given.
 import sys
 
 from PyQt5.QtCore import Qt

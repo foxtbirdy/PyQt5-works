@@ -1,8 +1,6 @@
-# -*- coding: utf-8 -*-
-# @Author: Climax
-# @Date:   2022-04-27 23:02:15
-# @Last Modified by:   Climax
-# @Last Modified time: 2022-04-30 00:51:32
+# QStackedLayout: Tabbed Views Application.
+# In Tabbed Views, only 1 widget is shown at a time
+
 import sys
 
 from PyQt5.QtCore import Qt
@@ -14,14 +12,14 @@ class MainWindow(QMainWindow):
 	def __init__(self):
 		super().__init__()
 
-		self.setWindowTitle("QStackedLayout + Box DEMO")
+		self.setWindowTitle("QStackedLayout Tabbed Views DEMO")
 
-		page_layout = QHBoxLayout()
+		main_layout = QHBoxLayout()
 		button_layout = QVBoxLayout()
 		self.stackLayout = QStackedLayout()
 
-		page_layout.addLayout(button_layout) # The page's button would be a vertical layout
-		page_layout.addLayout(self.stackLayout)
+		main_layout.addLayout(button_layout) # The page's button would be a vertical layout
+		main_layout.addLayout(self.stackLayout) # Set main layout to be stackedLayout.
 
 
 
@@ -44,7 +42,7 @@ class MainWindow(QMainWindow):
 		
 		widget = QWidget()
 		
-		widget.setLayout(page_layout)
+		widget.setLayout(main_layout)
 		self.setCentralWidget(widget)
 
 
@@ -53,6 +51,7 @@ class MainWindow(QMainWindow):
 		self.stackLayout.addWidget(Color("blue"))
 		self.stackLayout.addWidget(Color("purple"))
 
+	# Use setCurrentIndex to display the current focused widget over the stackedWidget.
 
 	def tab_1_active(self):
 		self.stackLayout.setCurrentIndex(0)
