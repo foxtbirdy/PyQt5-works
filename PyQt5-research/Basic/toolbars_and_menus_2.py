@@ -1,8 +1,6 @@
-# -*- coding: utf-8 -*-
-# @Author: Climax
-# @Date:   2022-04-30 01:51:14
-# @Last Modified by:   Climax
-# @Last Modified time: 2022-04-30 02:24:33
+# Using QAction over QToolBar to add more features
+# You know, the buttons over an app?
+# Note: QAction(QIcon("YOUR_PIC"), "HOVER_TEXT", self)
 
 import sys
 from PyQt5.QtCore import Qt
@@ -27,7 +25,9 @@ class MainWindow(QMainWindow):
 		button_action = QAction("Button", self)
 		button_action.setStatusTip("This is your button")
 		button_action.triggered.connect(self.toolbarClick)
+		button_action.setCheckable(True)
 
+		# Adding actions to ToolBar's button
 		toolBar.addAction(button_action)
 
 	def toolbarClick(self, s):

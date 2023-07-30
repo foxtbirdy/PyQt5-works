@@ -1,8 +1,5 @@
-# -*- coding: utf-8 -*-
-# @Author: Climax
-# @Date:   2022-07-04 21:41:36
-# @Last Modified by:   Climax
-# @Last Modified time: 2022-07-04 22:24:25
+# Adding toolbar action's icon using QIcon and QSize for sizing that icon
+# Martin Fitzpatrick's PyQt5 book didn't mentioned Qt, Qsize and other imports which resulted in confusion
 
 
 import sys
@@ -22,23 +19,15 @@ class MainWindow(QMainWindow):
 		self.setCentralWidget(label)
 
 		toolBar = QToolBar("Main toolbar")
-		toolBar.setIconSize(QSize(16,16)) # set size
+		toolBar.setIconSize(QSize(16,16)) # set size for all QToolbar icons
 		self.addToolBar(toolBar)
 
 		button_action = QAction(QIcon("bug.png"),"Your button", self)
 		button_action.setStatusTip("Hello there")
-
-
 		button_action.triggered.connect(self.toolBarClicked) 
 		toolBar.addAction(button_action)
 
-		# Status bar Text checkable or not
-		# Status bar Text is FALSE checkable by default
 		button_action.setCheckable(True)
-
-
-
-
 		self.setStatusBar(QStatusBar(self))
 
 	def toolBarClicked(self,s):

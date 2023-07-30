@@ -1,9 +1,6 @@
-# -*- coding: utf-8 -*-
-# @Author: Climax
-# @Date:   2022-07-04 21:41:36
-# @Last Modified by:   Climax
-# @Last Modified time: 2022-07-04 21:53:57
-
+# QStatusBar is used to display text over the bottom left of the app
+# QStatusBar is used for displaying current action on the app
+# It can also display by hovering toolbar actions
 
 import sys
 from PyQt5.QtCore import Qt
@@ -24,23 +21,19 @@ class MainWindow(QMainWindow):
 		self.addToolBar(toolBar)
 
 		button_action = QAction("Your button", self)
-		button_action.setStatusTip("Hello there")
 		button_action.triggered.connect(self.toolBarClicked) 
-		toolBar.addAction(button_action)
 
-		# Status bar Text checkable or not
-		# Status bar Text is FALSE checkable by default
+		# Setting the statusTip or "What to do if something hovers on this"
+		button_action.setStatusTip("Hello there")
+  
+		toolBar.addAction(button_action)
 		button_action.setCheckable(True)
 
-
-
-
+		# Set statusBar over current class (QMainWindow)
 		self.setStatusBar(QStatusBar(self))
 
 	def toolBarClicked(self,s):
 		print("click", s)
-
-
 
 
 app = QApplication(sys.argv)
