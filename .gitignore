@@ -6,3 +6,4 @@ pyvenv.cfg
 Lib
 Include
 **/__pycache__/
+PyQt5-works.code-workspace
