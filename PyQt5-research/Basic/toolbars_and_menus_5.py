@@ -3,6 +3,7 @@
 
 
 import sys
+import os
 from PyQt5.QtCore import Qt, QSize
 from PyQt5.QtGui import QIcon
 from PyQt5.QtWidgets import QApplication, QMainWindow, QLabel, QToolBar, QAction, QStatusBar
@@ -11,7 +12,7 @@ from PyQt5.QtWidgets import QApplication, QMainWindow, QLabel, QToolBar, QAction
 class MainWindow(QMainWindow):
 	def __init__(self):
 		super().__init__()
-
+  
 		self.setWindowTitle("Toolbars_and_menus_3.py")
 		label = QLabel("Kon'nichiwa")
 		label.setAlignment(Qt.AlignCenter)
@@ -22,19 +23,19 @@ class MainWindow(QMainWindow):
 		toolBar.setIconSize(QSize(16,16)) # set size for all QToolbar icons
 		self.addToolBar(toolBar)
 
-		button_action = QAction(QIcon("bug.png"),"Your button", self)
+		# I used svg formats because my png didn't work
+		button_action = QAction(QIcon("PyQt5-research\Basic\images\png.svg"), "Button" , self)
 		button_action.setStatusTip("Hello there")
 		button_action.triggered.connect(self.toolBarClicked) 
-		toolBar.addAction(button_action)
-
 		button_action.setCheckable(True)
 		self.setStatusBar(QStatusBar(self))
 
+		toolBar.addAction(button_action)
+
+
+
 	def toolBarClicked(self,s):
 		print("click", s)
-
-
-
 
 app = QApplication(sys.argv)
 

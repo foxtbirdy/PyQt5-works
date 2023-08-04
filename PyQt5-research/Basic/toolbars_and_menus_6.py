@@ -1,14 +1,10 @@
-# -*- coding: utf-8 -*-
-# @Author: Climax
-# @Date:   2022-07-04 21:41:36
-# @Last Modified by:   Climax
-# @Last Modified time: 2022-07-04 22:35:35
+# Adding widgets to QToolBar
 
 
 import sys
 from PyQt5.QtCore import Qt, QSize
 from PyQt5.QtGui import QIcon
-from PyQt5.QtWidgets import QApplication, QMainWindow, QLabel, QToolBar, QAction, QStatusBar
+from PyQt5.QtWidgets import QApplication, QMainWindow, QLabel, QToolBar, QAction, QStatusBar, QCheckBox
 
 
 class MainWindow(QMainWindow):
@@ -25,27 +21,32 @@ class MainWindow(QMainWindow):
 		toolBar.setIconSize(QSize(16,16)) # set size
 		self.addToolBar(toolBar)
 
-		button_action = QAction(QIcon("extra/bug.png"),"Your button", self)
-		button_action.setStatusTip("Hello there")
-		button_action.setCheckable(True)
-		button_action.triggered.connect(self.toolBarClicked) 
-		toolBar.addAction(button_action)
+		button_action_1 = QAction(QIcon("PyQt5-research\Basic\images\png.svg"),"Your button", self)
+		button_action_1.setStatusTip("Hello there")
+		button_action_1.setCheckable(True)
+		button_action_1.triggered.connect(self.toolBarClicked) 
+		toolBar.addAction(button_action_1)
 
-		toolBar.addSeparator() # create a new toolbar action
+		# Separator will separate the widgets by drawing a line
+		toolBar.addSeparator()
 
-		button_action_2 = QAction(QIcon("extra/bug.png"), "Your button", self)
+		button_action_2 = QAction(QIcon("PyQt5-research\Basic\images\png.svg"), "Your button", self)
 		button_action_2.setStatusTip("Hello from Button 2")
 		button_action_2.setCheckable(True)
 		toolBar.addAction(button_action_2)
 
+		toolBar.addSeparator()
+  
+		toolBar.addWidget(QLabel("Hello"))
+
+		toolBar.addSeparator()
+  
+		toolBar.addWidget(QCheckBox())
 
 		self.setStatusBar(QStatusBar(self))
 
 	def toolBarClicked(self,s):
 		print("click", s)
-
-
-
 
 app = QApplication(sys.argv)
 
