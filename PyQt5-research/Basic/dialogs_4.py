@@ -1,14 +1,9 @@
-# -*- coding: utf-8 -*-
-# @Author: Climax
-# @Date:   2022-07-06 16:25:20
-# @Last Modified by:   Climax
-# @Last Modified time: 2022-07-08 18:38:49
-
+# Using QMessage for message display other than QDialog
 
 
 import sys
 
-from PyQt5.QtWidgets import QApplication, QMainWindow, QVBoxLayout, QPushButton, QLabel, QMessageBox
+from PyQt5.QtWidgets import QApplication, QMainWindow, QPushButton, QMessageBox
 
 class MainWindow(QMainWindow):
 
@@ -31,10 +26,16 @@ class MainWindow(QMainWindow):
 		dlg.setWindowTitle("Hey you there")
 
 		dlg.setText("You are doing great right?")
-		dlg.setStandardButtons(QMessageBox.Yes | QMessageBox.No | QMessageBox.Ignore)
+  
+		# Set icons for the message box
 		dlg.setIcon(QMessageBox.Question)
+		
+		# Set event listener for QMessage Buttons response
+		dlg.setStandardButtons(QMessageBox.Yes | QMessageBox.No | QMessageBox.Ignore)
+		
 		button = dlg.exec_()
-
+		
+		# QMessage may have different buttons compared to QDialog
 		if button == QMessageBox.Yes:
 			print("Yes")
 		elif button == QMessageBox.Ignore:

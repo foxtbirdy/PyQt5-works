@@ -1,9 +1,4 @@
-# -*- coding: utf-8 -*-
-# @Author: Climax
-# @Date:   2022-07-04 21:41:36
-# @Last Modified by:   Climax
-# @Last Modified time: 2022-07-04 23:42:03
-
+# Using QMenu with QActions over the top of QToolBar
 
 import sys
 from PyQt5.QtCore import Qt, QSize
@@ -28,37 +23,36 @@ class MainWindow(QMainWindow):
 		toolBar.addWidget(QCheckBox())
 		self.addToolBar(toolBar)
 
-		button_action = QAction(QIcon("extra/bug.png"),"Your button", self)
-		button_action.setStatusTip("Hello there")
-		button_action.setCheckable(True)
-		button_action.triggered.connect(self.toolBarClicked) 
-		toolBar.addAction(button_action)
+		button_action_1 = QAction(QIcon("PyQt5-research\Basic\images\png.svg"),"Your button", self)
+		button_action_1.setStatusTip("Hello there")
+		button_action_1.setCheckable(True)
+		button_action_1.triggered.connect(self.toolBarClicked) 
+		toolBar.addAction(button_action_1)
 
-		toolBar.addSeparator() # create a new toolbar action
+		toolBar.addSeparator()
 
-		button_action_2 = QAction(QIcon("extra/bug.png"), "Your button", self)
+		button_action_2 = QAction(QIcon("PyQt5-research\Basic\images\png.svg"), "Your button", self)
 		button_action_2.setStatusTip("Hello from Button 2")
 		button_action_2.setCheckable(True)
 		toolBar.addAction(button_action_2)
 
-
-		self.setStatusBar(QStatusBar(self))
-
+		# There can be only 1 menu bar in an app
+  
 		menu = self.menuBar()
 
 		file_menu = menu.addMenu("&File")
-		file_menu.addAction(button_action)
+
+		# Menu bars can have QActions as well
+		file_menu.addAction(button_action_1)
 		file_menu.addSeparator()
 		file_menu.addAction(button_action_2)
 
-		file_submenu = file_menu.addMenu("Submenu")
-		file_submenu.addAction(button_action_2)
 
-
-
+		# set status
+		self.setStatusBar(QStatusBar(self))
+  
 	def toolBarClicked(self,s):
 		print("click", s)
-
 
 
 
