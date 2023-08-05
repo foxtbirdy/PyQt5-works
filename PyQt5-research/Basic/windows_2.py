@@ -1,36 +1,33 @@
-# -*- coding: utf-8 -*-
-# @Author: Climax
-# @Date:   2022-07-08 18:43:46
-# @Last Modified by:   Climax
-# @Last Modified time: 2022-07-08 21:11:52
-
-
+# To not recreate a new window if the current second window is
+# still running
 
 import sys
 from random import randint  
 from PyQt5.QtWidgets import (QApplication, QLabel, QMainWindow, QPushButton, QVBoxLayout, QWidget)
 
 
-app = QApplication(sys.argv)
 
 
 class MainWindow(QMainWindow):
-	"""
-	this is the main window
-	"""
-
-
-
 	def __init__(self):
 		super().__init__()
+		self.w = None
 		self.button = QPushButton("Click me for a widget to appear")
-		self.button.clicked.connect(self.create_window)
+		self.button.clicked.connect(self.show_new_window)
 		self.setCentralWidget(self.button)
 
 	def create_window(self, clicked):
 		print(clicked)
 		self.w = AnotherWindow()
 		self.w.show()
+
+
+	def show_new_window(self, checked):
+		print(checked)
+		if self.w is None:
+			self.w = AnotherWindow()
+			self.w.show()
+
 
 
 
@@ -44,7 +41,9 @@ class AnotherWindow(QWidget):
 
 
 		layout = QVBoxLayout()
-		self.label = QLabel(f"Another Window with a random number {randint(0,100)}")
+		self.label = QLabel(
+      f"Another Window with a random number: {randint(0,100)}"
+      )
 
 		self.button_exit = QPushButton("Click me to exit")
 		self.button_exit.clicked.connect(self.exit_program)
@@ -60,8 +59,9 @@ class AnotherWindow(QWidget):
 
 
 
-central = MainWindow()
-central.show()
+app = QApplication(sys.argv)
+window = MainWindow()
+window.show()
 app.exec_()
 
 
@@ -73,7 +73,9 @@ if self.w is None:
 	self.w = AnotherWindow()
 	self.w.show()
 
+A log was created for this case.
 
+PyQt5-research\logs\Checking if a second window is running.md
 """
 
 

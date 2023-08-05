@@ -1,26 +1,14 @@
-# -*- coding: utf-8 -*-
-# @Author: Climax
-# @Date:   2022-07-08 18:43:46
-# @Last Modified by:   Climax
-# @Last Modified time: 2022-07-08 21:10:48
-
-
+# Creating another window beside the QMainWindow
+# QWidget is used for that
 
 import sys
 
-from PyQt5.QtWidgets import (QApplication, QLabel, QMainWindow, QPushButton, QVBoxLayout, QWidget)
+from PyQt5.QtWidgets import (QApplication, QLabel, QMainWindow, QPushButton, QWidget, QVBoxLayout)
 
 
-app = QApplication(sys.argv)
 
 
 class MainWindow(QMainWindow):
-	"""
-	this is the main window
-	"""
-
-
-
 	def __init__(self):
 		super().__init__()
 		self.button = QPushButton("Click me for a widget to appear")
@@ -35,10 +23,11 @@ class MainWindow(QMainWindow):
 
 
 class AnotherWindow(QWidget):
+	"""
+	This window is a QWidget. 
+ 	If unliked to a parent, it will appear as a free floating window
+ 	"""
 
-	"""
-	This is the window where there are no parents. it is a standalone widget of a sort
-	"""
 	def __init__(self):
 		super().__init__()
 
@@ -57,18 +46,19 @@ class AnotherWindow(QWidget):
 		app.quit()
 
 
-
-central = MainWindow()
-central.show()
+app = QApplication(sys.argv)
+window = MainWindow()
+window.show()
 app.exec_()
 
 
-"""
 
-Please note that if you try to create another window that is not the MainWindow then the Anotherwindow will exit immediately because it has no parent window.
-That means, once the code is ran the program will exit immedidately due to it has no purpose making it be cleaned by python and then well.....destroyed.
 
-to fix this, be sure to add like self.w = AnotherWindow() instead of w.AnotherWindow to chain its connection to the main application.
+# Please note that if you try to create another window that is not the MainWindow 
+# then the Anotherwindow will exit immediately because it has no parent window.
+# That means, once the code is ran the program will exit immedidately due to it has no purpose making,
+# it be cleaned by python and then well.....destroyed.
 
-"""
+# to fix this, be sure to add like self.w = AnotherWindow() instead of w.AnotherWindow to create a reference to the main application.
+
 
